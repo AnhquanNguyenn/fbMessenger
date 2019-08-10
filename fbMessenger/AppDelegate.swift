@@ -17,6 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Building the Window, and making the screen visible
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        // Creating the storyboard essential function, connecting the controllers with the view layouts 
+        let layout = UICollectionViewFlowLayout()
+        let friendsController = FriendsController(collectionViewLayout: layout)
+        window?.rootViewController = UINavigationController(rootViewController: friendsController)
+        
+        
+        
         return true
     }
 
